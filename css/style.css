@@ -55,7 +55,6 @@ body{
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: Sreg;
-  overflow: hidden;
 }
 
 b{
@@ -67,11 +66,11 @@ b{
 #map img {
 	max-width: none !important;
 }
-
 #map {
 	width: 100%;
-  	height: 100%;
-  	float: left;
+  height: 100%;
+  float: left;
+  overflw-y:hidden;
 }
 
 a{
@@ -198,7 +197,6 @@ a{
 	background: transparent;
   pointer-events: none;
   height: 40px;
-  background:red;
 }
 #espacoW, #espacoW2, #espacoW3, #espacoW4, #space-index{
 	height: 40px;
