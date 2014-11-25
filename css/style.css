@@ -55,6 +55,7 @@ body{
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: Sreg;
+  overflow: hidden;
 }
 
 b{
@@ -1118,12 +1119,12 @@ a{
   }
 
   .my-reports-list{
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .settings-list{
     font-family: Sreg;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .space-width-fix{
@@ -1173,7 +1174,7 @@ a{
     height:400px !important;
   }
   #titFind, #titFindOther{
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .report{
@@ -1195,7 +1196,7 @@ a{
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-    font-size: 16px;
+    font-size: 14px;
     font-family:SSemi;
   }
   .descricao_report{
@@ -1203,7 +1204,7 @@ a{
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 15px;
     margin-bottom: 20px;
     font-family:Sreg !important;
@@ -1220,7 +1221,7 @@ a{
   }
 
   #titAss{
-    font-size: 14px;
+    font-size: 12px;
     font-family: SitD;
   }
   label {
@@ -1296,13 +1297,13 @@ a{
     height:50%;
   }
   .f-notifications-list, .r-notifications-list{
-    font-size: 14px;
+    font-size: 12px;
   }
   #r-notifications-list{
     margin-left: 1% !important;
   }
   .page-title-list{
-  	font-size: 14px;
+  	font-size: 12px;
   }
   #pages-titles{
   	margin-left: 6.5%;
