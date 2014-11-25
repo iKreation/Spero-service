@@ -1,0 +1,15 @@
+<div id="sliders">
+                    <div class="listRep">
+                        <form action="">
+                            <p><div class="slider">
+                            <form oninput="output1.value=slider1.value">
+                                <input type="range" id="slider1" name="slider1" min="0" max="100" step="1">
+                                <output class="slider-value" id="rangevalue1" for="slider1"></output>
+                                <label class="slider-label" name="output1" for="slider1">Environmental Impact</label>
+                            </form>
+                            </div></p>
+
+                            
+                        </form> 
+                    </div>
+                </div>

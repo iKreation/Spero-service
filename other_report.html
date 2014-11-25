@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SPERO</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- Spero CSS -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- ScrollPane CSS -->
+    <link href="css/jquery.jscrollpane.red.css" rel="stylesheet" type="text/css" media="all">
+
+    <!-- IE8 support for HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google maps api -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+</head>
+
+<body>
+    <!-- Map canvas -->
+    <div id="map" class="fullWidth"></div>
+
+    <!-- Menu -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alt-menu onTop" id="menu">
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-menu buton" id="logotipo">
+            <img id="imgLogo" src="img/logo.png" />
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu space">
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq alt-menu buton opPreto" id="amizades">
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq alt-menu buton opPreto" id="notifi">
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-menu opPreto" id="procura">
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu space">
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-menu buton opPreto" id="pagina">
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq alt-menu buton opPreto" id="defini">
+            <img class="imgMenu" id=" " src="img/def.png" />
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq alt-menu buton opPreto" id="log-out">
+            <img class="imgMenu" id="imgOut" src="img/out.png" />
+        </div>
+    </div>
+
+    <!-- Free Navigation -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container" id="vizi_container_other">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 space space-fixed"></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq cor-perfil corOp buton clickable" id="vizibi2Other">
+            <img id="imgVizi" src="img/vizi2.png" />
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq cor-perfil corOp buton esquerda clickable" id="placeOther">
+            <img id="imgChoose" src="img/choose.png" />
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 space"></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-xl2 buton cor-perfil corOp clickable" id="filtroFind">
+            <div id="titFind">
+                    Filter by:
+            </div>
+            <div id="listFind">
+              <input type="text" class="text-filtro clickable" placeholder="tag...">
+              <input type="text" class="text-filtro text-filtro2 clickable" placeholder="radius...">
+                <div class="listRep">
+                    <form action="">
+                        <p><input id="check23" type="checkbox" name="categoria" value="check1"><label for="check23">Own Reports</label></p>
+                        <p><input id="check24" type="checkbox" name="categoria" value="check1"><label for="check24">Other's Reports</label></p>
+                    </form>
+                </div>
+                <div class="listAss">
+                    <form action="">
+                        <p><input id="check13" type="checkbox" name="categoria" value="check1"><label for="check13">Urban Ideas</label></p>
+                        <p><input id="check1" type="checkbox" name="categoria" value="check1"><label for="check1">Solved Problems</label></p>
+                        <p><input id="check2" type="checkbox" name="categoria" value="check2"><label for="check2">Unsolved Problems</label></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 space"></div>
+    </div>
+
+    <!-- Images -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container" id="container-other-image">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 alt-100 space"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 alt-xl2 fotoAtual">
+            <img class="imgFoto2" src="img/buraco.jpg" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 buton clickable esquerda alt-lg2 fotoAtual">
+            <img class="imgFoto2" src="img/buraco.jpg" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 buton clickable esquerda alt-lg2 fotoAtual">
+            <img class="imgFoto2" src="img/buraco.jpg" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 buton clickable esquerda alt-lg2 fotoAtual">
+            <img class="imgFoto2" src="img/buraco.jpg" />
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq other_report esquerda buton clickable" id="fecharOtherImg">
+            <img id="imgFechar" src="img/fechar.png" />
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 clickable buton esquerda alt-lg2 fotoAtual linha2">
+            <img class="imgFoto2" src="img/buraco.jpg" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 clickable buton esquerda alt-lg2 fotoAtual linha2">
+            <img class="imgFoto2" src="img/buraco.jpg" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 clickable buton esquerda alt-lg2 fotoAtual linha2">
+            <img class="imgFoto2" src="img/buraco.jpg" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 clickable buton alt-lg2 fotoAtual linha2">
+            <img class="imgFoto2" src="img/buraco.jpg" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 clickable buton esquerda alt-lg2 fotoAtual linha2">
+            <img class="imgFoto2" src="img/buraco.jpg" />
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container container-cut-2" id="container-other-report">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space">
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq other_report buton clickable" id="vizibiOther">
+            <img id="imgVizi" src="img/vizi.png" />
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9 space">
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq other_report esquerda buton clickable" id="fecharOther">
+            <img id="imgFechar" src="img/fechar.png" />
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 space space-width-fix">
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space space-hide">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 linha2 reports other-height clickable">
+            <div class="dentro other_report">
+                <div class="report report-sing" id="report#1344">
+                    <div class="report-status"><b>Unsolved</b> report</div>
+                    <div class="titulo_report">Árvores partidas Árvores partidas Árvores partidas Árvores partidas</div>
+                    <div class="sub_titulo_report">Rua Vale da Mata Rua Vale da Mata Rua Vale da Mata</div>
+                    <div class="descricao_report">Há cerca de 1 ano, durante a “latada académica”, por vandalismo, partiram várias árvores, ainda pequenas, desta rua. Neste caso, frente ao LoteB da Guarda Inglesa. Por actuação dos jardineiros da CMC a árvore foi removida. Mas, 1 ano depois, ainda não foi substituída, dando lugar a um can- teiro vazio.</div>
+                    <div class="autor-data">created by <b>joão</b> on <b>07/07/2014</b></div>
+                    <div class="affected-counter"><b>6</b> affected</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 linha2 esquerda clickable comments comments-height outline">
+            <div class="dentro">
+                <div class="widthCommentMe">
+                    <div class="foto_me buton">
+                        <img class="img_me" src="img/foto.png" />
+                    </div>
+                    <div class="adicionar">
+                      <form action="demo_form.asp">
+                        <input class="text-place2 clickable other_report outline" id="text-title" type="text" placeholder="add comment..." name="fname">
+                      </form>
+                    </div>
+                </div>
+
+                <div class="widthCommentOther">
+                    <div class="foto_other buton">
+                        <img class="img_other" src="img/foto.png" />
+                    </div>
+                    <div class="comment-text other_report">
+                        <b>joão: </b>ainda pequenas, desta rua. Neste caso, frente ao LoteB da Guarda Inglesa. Por actuação dos jardineiros da CMC a árvore foi removida. Mas, 1 ano depois, ainda não foi substituída, dando lugar a um can- teiro
+                    </div>
+                </div>
+                <div class="widthCommentOther">
+                    <div class="foto_other buton">
+                        <img class="img_other" src="img/foto.png" />
+                    </div>
+                    <div class="comment-text other_report">
+                        <b>joão: </b>ainda pequenas, desta rua. Neste caso, frente ao LoteB da Guarda Inglesa. Por actuação dos jardineiros da CMC a árvore foi removida. Mas, 1 ano depois, ainda não foi substituída, dando lugar a um can- teiro
+                    </div>
+                </div>
+                <div class="widthCommentOther">
+                    <div class="foto_other buton">
+                        <img class="img_other" src="img/foto.png" />
+                    </div>
+                    <div class="comment-text other_report">
+                        <b>joão: </b>ainda pequenas, desta rua. Neste caso, frente ao LoteB da Guarda Inglesa. Por actuação dos jardineiros da CMC a árvore foi removida. Mas, 1 ano depois, ainda não foi substituída, dando lugar a um can- teiro
+                    </div>
+                </div>
+                <div class="widthCommentOther">
+                    <div class="foto_other buton">
+                        <img class="img_other" src="img/foto.png" />
+                    </div>
+                    <div class="comment-text other_report">
+                        <b>joão: </b>ainda pequenas, desta rua. Neste caso, frente ao LoteB da Guarda Inglesa. Por actuação dos jardineiros da CMC a árvore foi removida. Mas, 1 ano depois, ainda não foi substituída, dando lugar a um can- teiro
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 height-45 linha2 space" id="space-height-fix">
+        </div>
+
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 space space-height-45"></div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space">
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 space"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tumbs-height clickable">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 linha2 alt-sm tumb-container">
+                    <div class="foto_report2 buton">
+                        <img class="img_report" src="img/buraco.jpg" />
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 linha2 alt-sm tumb-container">
+                    <div class="foto_report2 buton">
+                        <img class="img_report" src="img/buraco.jpg" />
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 linha2 alt-sm tumb-container">
+                    <div class="foto_report2 buton">
+                        <img class="img_report" src="img/buraco.jpg" />
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 linha2 alt-sm tumb-container">
+                    <div class="foto_report2 buton">
+                        <img class="img_report" src="img/buraco.jpg" />
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 linha2 alt-sm tumb-container">
+                    <div class="foto_report2 buton">
+                        <img class="img_report" src="img/buraco.jpg" />
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 linha2 alt-sm tumb-container">
+                    <div class="foto_report2 buton">
+                        <img class="img_report" src="img/buraco.jpg" />
+                    </div>
+                </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 maisPeq2 alt-md other_report buton esquerda clickable alt-n" id="aff-btn">
+            <div class="simbolo simbolo2" id="affSimb">
+                <img class="imgSim" id="imgAff" src="img/affected.png" />
+            </div>
+            <div class="descricao descricao2" id="descAff">
+                I'm affected
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 maisPeq2 alt-md other_report buton esquerda clickable alt-n2" id="follow-btn">
+            <div class="simbolo simbolo2" id="flwSimb">
+                <img class="imgSim" id="imgFlw" src="img/follow.png" />
+            </div>
+            <div class="descricao descricao2" id="descFlw">
+                Follow joão
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript at the bottom -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- for testing -->
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <!-- ScrollPane JS -->
+    <script src="js/jquery.jscrollpane.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mousewheel.js" type="text/javascript"></script>
+
+</body>
+
+</html>

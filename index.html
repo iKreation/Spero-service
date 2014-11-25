@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SPERO</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- Spero CSS -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- ScrollPane CSS -->
+    <link href="css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" media="all">
+
+    <!-- IE8 support for HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google maps api -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+</head>
+
+<body>
+    <!-- Map canvas -->
+    <div id="map" class="fullWidth"></div>
+
+    <!-- Menu -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alt-menu onTop" id="menu">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-menu buton" id="logotipo">
+            <img id="imgLogo" src="img/logo.png" />
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu space">
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq alt-menu buton padding" id="amizades">
+            <img class="imgMenu" id="imgAmi" src="img/amigos.png" />
+            <div class="count" id="count-friends">3</div>
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq alt-menu buton padding" id="notifi">
+            <img class="imgMenu" id="imgNot" src="img/notifi.png" />
+            <div class="count" id="count-reports">10</div>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-menu" id="procura">
+            <!--to do autocomplete -->
+            <form action="demo_form.asp">
+              <input class="text-search clickable outline" id="text-search" type="text" placeholder="search" name="fname">
+            </form>
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu space">
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-menu buton" id="pagina">
+            <div id="page-title">Profile</div>
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq alt-menu buton" id="defini">
+            <img class="imgMenu" id="imgDef" src="img/def.png" />
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq alt-menu buton top-adjust" id="log-out">
+            <img class="imgMenu-ex" id="imgOut" src="img/out.png" />
+        </div>
+    </div>
+
+    <!-- Loading-->
+    <div class="onTop" id="loading"></div>
+
+    <!-- Friends notifications -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container" id="followers-notifications">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 space"></div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 clickable outline" id="f-notifications-list">
+            <div class="f-notifications-list alt-menu clickable buton opPreto not-seen"><b>jonyjony</b> followed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton opPreto not-seen linha2"><b>jonyjony</b> followed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton opPreto not-seen linha2"><b>jonyjony</b> followed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton opPreto not-seen linha2"><b>jonyjony</b> followed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton opPreto not-seen linha2"><b>jonyjony</b> followed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton opPreto not-seen linha2"><b>jonyjony</b> followed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton linha2"><b>jonyjony</b> followed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton linha2"><b>jonyjony</b> unfollowed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton linha2"><b>jonyjony</b> followed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton linha2"><b>jonyjony</b> unfollowed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton linha2"><b>jonyjony</b> followed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton linha2"><b>jonyjony</b> followed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton linha2"><b>jonyjony</b> followed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton linha2"><b>jonyjony</b> followed you.</div>
+
+            <div class="f-notifications-list alt-menu clickable buton linha2"><b>jonyjony</b> followed you.</div>
+        </div>
+    </div>
+
+    <!-- REPORTS notifications -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container" id="reports-notifications">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 space"></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space"></div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 clickable outline" id="r-notifications-list">
+            <div class="r-notifications-list alt-menu clickable buton opPreto not-seen">One of your reports is being treated.</div>
+
+            <div class="r-notifications-list alt-menu clickable buton opPreto not-seen linha2">Someone is also affected with your report.</div>
+
+            <div class="r-notifications-list alt-menu clickable buton opPreto not-seen linha2">Someone is also affected with your report.</div>
+
+            <div class="r-notifications-list alt-menu clickable buton opPreto not-seen linha2">Someone is also affected with your report.</div>
+
+            <div class="r-notifications-list alt-menu clickable buton opPreto not-seen linha2">Someone is also affected with your report.</div>
+
+            <div class="r-notifications-list alt-menu clickable buton opPreto not-seen linha2">Someone is also affected with your report.</div>
+
+            <div class="r-notifications-list alt-menu clickable buton opPreto not-seen linha2">Someone is also affected with your report.</div>
+
+            <div class="r-notifications-list alt-menu clickable buton opPreto linha2">Someone is also affected with your report.</div>
+
+            <div class="r-notifications-list alt-menu clickable buton opPreto linha2">Someone is also affected with your report.</div>
+
+            <div class="r-notifications-list alt-menu clickable buton opPreto not-seen linha2">Someone is also affected with your report.</div>
+
+            <div class="r-notifications-list alt-menu clickable buton opPreto not-seen linha2">Someone is also affected with your report.</div>
+
+            <div class="r-notifications-list alt-menu clickable buton opPreto not-seen linha2">Someone is also affected with your report.</div>
+        </div>
+    </div>
+
+    <!-- Page title dropdown -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container" id="pages-titles">
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 spaceFind space"></div>
+
+        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-4 clickable outline" id="page-title-list">
+            <div class="page-title-list alt-menu clickable buton opPreto not-seen" id="add-report">Add Report</div>
+
+            <div class="page-title-list alt-menu clickable buton linha2 opPreto not-seen" id="my-reports">My Reports</div>
+
+            <div class="page-title-list alt-menu clickable buton linha2 opPreto not-seen" id="find-reports">Find Reports</div>
+
+            <div class="page-title-list alt-menu clickable buton linha2 opPreto not-seen" id="dss">Decision Support System</div>
+
+            <div class="page-title-list alt-menu clickable buton linha2 opPreto not-seen" id="following-title">Following</div>
+
+            <div class="page-title-list alt-menu clickable buton linha2 opPreto not-seen" id="followers-title">Followers</div>
+        </div>
+    </div>
+
+    <!-- Free Navigation -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container" id="vizi_container" title="leave free search">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 space space-fixed"></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq cor-perfil corOp buton clickable" id="vizibi2">
+            <img id="imgVizi" src="img/vizi2.png" />
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq cor-perfil corOp buton esquerda clickable" id="place" title="add report">
+            <img id="imgChoose" src="img/choose.png" />
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 space"></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-xl2 buton cor-perfil corOp clickable" id="filtroFind">
+            <div id="titFind">
+                    Filter by:
+            </div>
+            <div id="listFind">
+              <input type="text" class="text-filtro clickable outline" placeholder="tag...">
+              <input type="text" class="text-filtro text-filtro2 clickable outline" placeholder="radius...">
+                <div class="listRep">
+                    <form action="">
+                        <p><input id="check23" type="checkbox" name="categoria" value="check1"><label for="check23">Own Reports</label></p>
+                        <p><input id="check24" type="checkbox" name="categoria" value="check1"><label for="check24">Other's Reports</label></p>
+                    </form>
+                </div>
+                <div class="listAss">
+                    <form action="">
+                        <p><input id="check13" type="checkbox" name="categoria" value="check1"><label for="check13">Urban Ideas</label></p>
+                        <p><input id="check1" type="checkbox" name="categoria" value="check1"><label for="check1">Solved Problems</label></p>
+                        <p><input id="check2" type="checkbox" name="categoria" value="check2"><label for="check2">Unsolved Problems</label></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 space"></div>
+    </div>
+
+    <!-- Find Reports -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container" id="find_container">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space space-fixed"></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq cor-perfil corOp buton clickable" id="placeFind" title="add report">
+            <img id="imgChoose" src="img/choose.png" />
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 space"></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-xl2 buton cor-perfil corOp clickable" id="filtroFind">
+            <div id="titFind">
+                    Filter by:
+            </div>
+            <div id="listFind">
+              <input type="text" class="text-filtro clickable outline" placeholder="tag...">
+              <input type="text" class="text-filtro text-filtro2 clickable outline" placeholder="radius...">
+                <div class="listRep">
+                    <form action="">
+                        <p><input id="check23" type="checkbox" name="categoria" value="check1"><label for="check23">Own Reports</label></p>
+                        <p><input id="check24" type="checkbox" name="categoria" value="check1"><label for="check24">Other's Reports</label></p>
+                    </form>
+                </div>
+                <div class="listAss">
+                    <form action="">
+                        <p><input id="check13" type="checkbox" name="categoria" value="check1"><label for="check13">Urban Ideas</label></p>
+                        <p><input id="check1" type="checkbox" name="categoria" value="check1"><label for="check1">Solved Problems</label></p>
+                        <p><input id="check2" type="checkbox" name="categoria" value="check2"><label for="check2">Unsolved Problems</label></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq cor-perfil corOp buton esquerda clickable" id="fecharFind" title="close find reports">
+            <img id="imgFechar" src="img/fechar.png" />
+        </div>
+    </div>
+
+    <!-- Profile photo -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container" id="photo_container">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space"></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-xl fotoAtual">
+            <img class="imgFoto2" src="img/foto.png" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 maisPeq2 alt-md cor-perfil corOp buton esquerda clickable" id="change-btn">
+            <div class="simbolo simbolo2" id="imgChange">
+                <img class="imgSim" id="imgImg" src="img/addimg.png" />
+            </div>
+            <div class="descricao descricao2" id="descChange">
+                Change photo
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 space"></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space"></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq cor-perfil corOp buton clickable" id="fecharChange">
+            <img id="imgFechar" src="img/fechar.png" />
+        </div>
+
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 linha2 alt-sm space"></div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq2 linha2 esquerda cor-perfil alt-md recent clickable">Recent photos</div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 maisPeq2 linha2 alt-md recent-tumb esquerda buton clickable">
+            <img class="imgFoto2" src="img/foto.png" />
+        </div>
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 cor-perfil linha2 alt-md space"></div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space"></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-md space"></div>
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 maisPeq2 linha2 alt-md recent-tumb esquerda buton clickable">
+                <img class="imgFoto2" src="img/foto.png" />
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 maisPeq2 linha2 alt-md recent-tumb esquerda buton clickable">
+                <img class="imgFoto2" src="img/foto.png" />
+            </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container container-cut" id="container">
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2" id="space-index"></div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq cor-perfil corOp buton clickable" id="vizibi" title="free search">
+            <img id="imgVizi" src="img/vizi.png" />
+        </div>
+
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 space">
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space">
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 maisPeq2 linha2 clickable" id="fotoDados">
+            <div class="alt-lg cor-perfil buton fotoOp foto-profile" id="foto">
+                <div id="change-foto">update your<br>photo</div>
+                <img id="imgFoto" src="img/foto.png" />
+            </div>
+            <div class="alt-lg linha2 cor-perfil corOp"id="dados">
+                <div id="textoDad">
+                    <p id="nomeDad">
+                        Francisco<br>
+                        Baila
+                    </p>
+
+                    <p id="txDados">
+                        <div class="buton txDados" id="statsRep"><b>2</b> Reports</div>
+                        <div class="buton txDados" id="statsFollowing"><b>6</b> Following</div>
+                        <div class="buton txDados" id="statsFollowers"><b>0</b> Followers</div>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 maisPeq2 alt-lg linha2 cor-perfil corOp buton esquerda clickable parentSimb" id="adReport">
+            <div class="simbolo" id="adSimb">
+                <img class="imgSim" id="imgAd" src="img/add.png" />
+            </div>
+            <div class="descricao" id="descAd">
+                Add Report
+            </div>
+        </div>
+
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 maisPeq2 esquerda clickable" id="myFind">
+            <div class="alt-md cor-perfil parentSimb corOp buton" id="myRep">
+                <div class="simbolo simbolo2" id="mySimb">
+                    <img class="imgSim" id="imgMy" src="img/my.png" />
+                </div>
+                <div class="descricao descricao2" id="descMy">
+                    My Reports
+                </div>
+            </div>
+
+            <div class="linha2 cor-perfil corOp buton alt-md parentSimb buton" id="findRep">
+                <div class="simbolo simbolo2" id="findSimb">
+                    <img class="imgSim" id="imgFind" src="img/find.png" />
+                </div>
+                <div class="descricao descricao2" id="descFind">
+                    Find Reports
+                </div>
+            </div>
+
+            <div class="linha2 cor-perfil corOp buton alt-md parentSimb buton" id="dssBtn">
+                <div class="descricao descricao3" id="dssFind">
+                    Decision<br>Support<br>System
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 cor-perfil reports esquerda clickable outline" id="reports">
+            <div id="dentro">
+                <div class="report corOp cor-perfil" id="report#1">
+                    <div class="report-status"><b>Unsolved</b> report</div>
+                    <div class="titulo_report buton">Passeios Irregulares</div>
+                    <div class="sub_titulo_report">Rua Antero de Quental</div>
+                    <div class="descricao_report">Passeios irregulares devido ao crescimento excessivo das raízes das árvores existentes nos passeios.</div>
+                    <div class="autor-data">created by <b>monica_sos</b> on <b>07/07/2014</b>
+                    </div>
+                    <div class="affected-counter"><b>2</b> affected</div>
+                    <div class="foto_report buton">
+                        <img class="img_foto" src="img/buraco.jpg" />
+                    </div>
+                </div>
+
+                <div class="report corOp cor-perfil buton" id="report#1">
+                    <div class="report-status"><b>Unsolved</b> report</div>
+                    <div class="titulo_report">Trabalhos de Reparação mal identificados</div>
+                    <div class="sub_titulo_report">Rua Tomar</div>
+                    <div class="descricao_report">Zona onde se esta a realizar um trabalho de reparação numa fachada de pequena dimensão na qual não existe qualquer tipo de vedação para salvaguardar quem lá passa, durante o tempo de duração dos trabalhos.</div>
+                    <div class="autor-data">created by <b>monica_sos</b> on <b>07/07/2014</b>
+                    </div>
+                    <div class="affected-counter"><b>6</b> affected</div>
+                    <div class="foto_report">
+                        <img class="img_foto" src="img/cenas.jpg" />
+                    </div>
+                </div>
+
+                <div class="report corOp cor-perfil buton" id="report#1">
+                    <div class="report-status"><b>Unsolved</b> report</div>
+                    <div class="titulo_report">Árvores partidas Árvores partidas Árvores partidas Árvores partidas Árvores partidas Árvores partidas</div>
+                    <div class="sub_titulo_report">Rua Vale da Mata Rua Vale da Mata Rua Vale da Mata</div>
+                    <div class="descricao_report">Há cerca de 1 ano, durante a “latada académica”, por vandalismo, partiram várias árvores, ainda pequenas, desta rua. Neste caso, frente ao LoteB da Guarda Inglesa. Por actuação dos jardineiros da CMC a árvore foi removida. Mas, 1 ano depois, ainda não foi substituída, dando lugar a um can- teiro vazio.</div>
+                    <div class="autor-data">created by <b>joão</b> on <b>07/07/2014</b>
+                    </div>
+                    <div class="affected-counter"><b>6</b> affected</div>
+                    <div class="foto_report">
+                        <img class="img_foto" src="img/buraco.jpg" />
+                    </div>
+                </div>
+
+                <div class="report corOp cor-perfil buton" id="report#1">
+                    <div class="report-status"><b>Unsolved</b> report</div>
+                    <div class="titulo_report">Árvores partidas Árvores partidas Árvores partidas Árvores partidas Árvores partidas Árvores partidas</div>
+                    <div class="sub_titulo_report">Rua Vale da Mata Rua Vale da Mata Rua Vale da Mata</div>
+                    <div class="descricao_report">Há cerca de 1 ano, durante a “latada académica”, por vandalismo, partiram várias árvores, ainda pequenas, desta rua. Neste caso, frente ao LoteB da Guarda Inglesa. Por actuação dos jardineiros da CMC a árvore foi removida. Mas, 1 ano depois, ainda não foi substituída, dando lugar a um can- teiro vazio.</div>
+                    <div class="autor-data">created by <b>joão</b> on <b>07/07/2014</b>
+                    </div>
+                    <div class="affected-counter"><b>6</b> affected</div>
+                    <div class="foto_report">
+                        <img class="img_foto" src="img/buraco.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 linha2 esquerda clickable outline" id="filtro">
+            <div class="corOp cor-perfil" id="inside_filtro">
+                <div id="titAss">
+                    Filter by:
+                </div>
+                <input type="text" class="text-filtro clickable outline" placeholder="tag...">
+                <input type="text" class="text-filtro text-filtro2 clickable outline" placeholder="radius...">
+                <div class="listRep">
+                    <form action="">
+                        <p><input id="check23" type="checkbox" name="categoria" value="check1"><label for="check23">Own Reports</label></p>
+                        <p><input id="check24" type="checkbox" name="categoria" value="check1"><label for="check24">Other's Reports</label></p>
+                    </form>
+                </div>
+                <div class="listAss">
+                    <form action="">
+                        <p><input id="check1" type="checkbox" name="categoria" value="check1"><label for="check1">Redes Eléctricas</label></p>
+                        <p><input id="check2" type="checkbox" name="categoria" value="check2"><label for="check2">Passeios</label></p>
+                        <p><input id="check3" type="checkbox" name="categoria" value="check3"><label for="check3">Pavimento</label></p>
+                        <p><input id="check4" type="checkbox" name="categoria" value="check4"><label for="check4">Abastecimento de Águas</label></p>
+                        <p><input id="check5" type="checkbox" name="categoria" value="check5"><label for="check5">Saneamento</label></p>
+                        <p><input id="check6" type="checkbox" name="categoria" value="check6"><label for="check6">Redes de Gás</label></p>
+                        <p><input id="check7" type="checkbox" name="categoria" value="check7"><label for="check7">Iluminação</label></p>
+                        <p><input id="check8" type="checkbox" name="categoria" value="check8"><label for="check8">Outros</label></p>
+                        <p><input id="check1" type="checkbox" name="categoria" value="check1"><label for="check9">Redes Eléctricas</label></p>
+                        <p><input id="check2" type="checkbox" name="categoria" value="check2"><label for="check10">Passeios</label></p>
+                        <p><input id="check3" type="checkbox" name="categoria" value="check3"><label for="check11">Pavimento</label></p>
+                        <p><input id="check4" type="checkbox" name="categoria" value="check4"><label for="check12">Abastecimento de Águas</label></p>
+                        <p><input id="check5" type="checkbox" name="categoria" value="check5"><label for="check13">Saneamento</label></p>
+                        <p><input id="check6" type="checkbox" name="categoria" value="check6"><label for="check14">Redes de Gás</label></p>
+                        <p><input id="check7" type="checkbox" name="categoria" value="check7"><label for="check15">Iluminação</label></p>
+                        <p><input id="check8" type="checkbox" name="categoria" value="check8"><label for="check16">Outros</label></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Javascript at the bottom -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- for testing -->
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <!-- ScrollPane JS -->
+    <script src="js/jquery.jscrollpane.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mousewheel.js" type="text/javascript"></script>
+
+</body>
+
+</html>
