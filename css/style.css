@@ -198,6 +198,7 @@ a{
 	background: transparent;
   pointer-events: none;
   height: 40px;
+  background:red;
 }
 #espacoW, #espacoW2, #espacoW3, #espacoW4, #space-index{
 	height: 40px;
@@ -1225,7 +1226,7 @@ a{
     font-family: SitD;
   }
   label {
-    font-size: 12px !important;
+    font-size: 10px !important;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
@@ -1233,19 +1234,19 @@ a{
     font-family: Sreg;
   }
   ::-webkit-input-placeholder { /* WebKit browsers */
-    font-size: 12px !important;
+    font-size: 10px !important;
     font-family: SitD !important;
   }
   :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    font-size: 12px !important;
+    font-size: 10px !important;
     font-family: SitD !important;
   }
   ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    font-size: 12px !important;
+    font-size: 10px !important;
     font-family: SitD !important;
   }
   :-ms-input-placeholder { /* Internet Explorer 10+ */
-    font-size: 12px !important;
+    font-size: 10px !important;
     font-family: SitD !important;
   }
 
