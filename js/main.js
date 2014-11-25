@@ -518,6 +518,8 @@ app.init = function() {
 		$('.reports').jScrollPane();
 	}, 2000);
 
+	$("#container-settings").fadeIn(300);
+
 	$("#choose_container").fadeIn(300);
 	$("#choose_container").css({'cursor': 'url(img/cursor.png) 15 15, pointer'});
 
