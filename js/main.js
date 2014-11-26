@@ -516,6 +516,8 @@ app.init = function() {
 		$("#container").fadeIn(300);
 		$('#filtro').jScrollPane();
 		$('.reports').jScrollPane();
+		$("#login-form").fadeIn(300);
+		$("#registration-form").fadeIn(300);
 	}, 2000);
 
 	$("#container-settings").fadeIn(300);

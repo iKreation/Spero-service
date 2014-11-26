@@ -257,11 +257,11 @@ a{
 /*--------------------CONTAINERS */
 .container{
 	margin-top: 80px;
-    height:100%;
-    min-height:100%;
-    display: none;
-    pointer-events: none;
-    max-width:1900px !important;
+  height:100%;
+  min-height:100%;
+  display: none;
+  pointer-events: none;
+  max-width:1900px !important;
 }
 .container-cut{
     max-width: 1500px !important;
@@ -452,7 +452,7 @@ a{
 }
 .titulo_report{
 	color:white;
-	font-family: SBold;
+	font-family: Sbold;
 	font-size: 24px;
 	width: 94%;
 	margin: auto;
@@ -1037,7 +1037,48 @@ a{
 }
 /*------------DSS PAGE */
 
+/*------------LOGIN/REGISTER */
+#form-title{
+  font-family: Sbold;
+  font-size: 20px;
+  color: white;
+  text-align:center;
+  margin-top:30px;
+}
+.form-message{
+  font-family: Sreg;
+  font-size: 18px;
+  color: white;
+  text-align:center;
+  margin-top:30px;
+}
+#login-form, #registration-form{
+  height:370px !important;
+  width:330px !important;
+  display:none;
+  margin-left:calc(50% - 160px);
+  margin-top:120px;
+}
+.form-button{
+  height: 35px;
+  width: 100px;
+  background: white;
+  font-family: Sbold;
+  font-size: 18px;
+  color: rgb(64,212,126);
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  margin-top: 30px;
+  margin-left:calc(50% - 50px);
+}
+.form-button2{
+  width: 200px;
+  margin-left:calc(50% - 100px);
+}
+/*------------LOGIN/REGISTER */
 
+/*------------LOADING */
 #loading{
   margin-left: calc(50% - 80px) !important;
   margin-top: 250px !important;
@@ -1074,7 +1115,7 @@ a{
    from { background-position:    0px; }
      to { background-position: -6880px; }
 }
-
+/*------------LOADING */
 
 
 
@@ -1189,7 +1230,7 @@ a{
     hyphens: auto;
     margin: auto;
     margin-top: 10px;
-    font-family:SBold;
+    font-family:Sbold;
   }
   .sub_titulo_report{
     -webkit-hyphens: auto;
@@ -1450,7 +1491,7 @@ a{
     hyphens: auto;
     margin: auto;
     margin-top: 10px;
-    font-family:SBold;
+    font-family:Sbold;
   }
   .sub_titulo_report{
     -webkit-hyphens: auto;

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SPERO</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- Spero CSS -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- ScrollPane CSS -->
+    <link href="css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" media="all">
+
+    <!-- IE8 support for HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google maps api -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+</head>
+
+<body>
+    <!-- Map canvas -->
+    <div id="map" class="fullWidth"></div>
+
+    <!-- Menu -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alt-menu onTop" id="menu">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-menu buton" id="logotipo">
+        <img id="imgLogo" src="img/logo.png" />
+      </div>
+    </div>
+
+    <!-- Loading-->
+    <div class="onTop" id="loading"></div>
+
+    <!-- Content -->
+    <div class="onTop cor-perfil clickable corOp" id="registration-form">
+      <div id="form-title"> Sign up to start reporting.</div>
+      <form>
+        <input type="text" class="text-filtro clickable outline" placeholder="e-mail...">
+        <input type="text" class="text-filtro clickable outline" placeholder="username...">
+        <input type="text" class="text-filtro clickable outline" placeholder="password...">
+        <input type="text" class="text-filtro clickable outline" placeholder="confirm password...">
+        <input type="submit" class="form-button buton clickable" value="Sign Up">
+      </form>
+      <div class="form-message buton clickable">Already have an account? <b>Sign In</b></div>
+    </div>
+
+    <!-- Javascript at the bottom -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- for testing -->
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <!-- ScrollPane JS -->
+    <script src="js/jquery.jscrollpane.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mousewheel.js" type="text/javascript"></script>
+
+</body>
+
+</html>
