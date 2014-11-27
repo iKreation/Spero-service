@@ -74,23 +74,27 @@
 
     <!-- Vizibi btn other people -->
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container" id="vizi_container_other">
-        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space"></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space space-hide"></div>
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq cor-perfil corOp buton clickable" id="vizibi4">
             <img id="imgVizi" src="img/vizi2.png" />
         </div>
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space"></div>
-        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 sapce"></div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-menu-x4 buton cor-perfil corOp clickable" id="filtroFind">
-            <div id="titFind">
-                    Filter by:
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-8 sapce"></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 alt-xl2 buton cor-perfil corOp clickable" id="filtroFind">
+          <div id="titFind">
+            Filter by:
+          </div>
+          <div id="listFind">
+            <input type="text" class="text-filtro clickable outline" placeholder="tag...">
+            <input type="text" class="text-filtro text-filtro2 clickable outline" placeholder="radius...">
+            <div class="listAss">
+              <form action="">
+                <p><input id="check13" type="checkbox" name="categoria" value="check1"><label for="check13">Urban Ideas</label></p>
+                <p><input id="check1" type="checkbox" name="categoria" value="check1"><label for="check1">Solved Problems</label></p>
+                <p><input id="check2" type="checkbox" name="categoria" value="check2"><label for="check2">Unsolved Problems</label></p>
+              </form>
             </div>
-            <div id="listFind">
-                <form action="">
-                    <p><input id="check13" type="checkbox" name="categoria" value="check1"><label for="check13">Urban Ideas</label></p>
-                    <p><input id="check23" type="checkbox" name="categoria" value="check2"><label for="check23">Solved Problems</label></p>
-                    <p><input id="check33" type="checkbox" name="categoria" value="check3"><label for="check33">Unsolved Problems</label></p>
-                </form>
-            </div>
+          </div>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 space"></div>
     </div>
@@ -204,34 +208,34 @@
             </div>
         </div>
 
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 linha2 esquerda clickable" id="filtro">
-            <div class="corOp cor-perfil" id="inside_filtro">
-                <div id="titAss">
-                    Filter by:
-                </div>
-                <textarea class="text-filtro text-filtro12 clickable" id="text-title" placeholder="tag..." value=""></textarea>
-                <textarea class="text-filtro text-filtro2 clickable" id="text-title" placeholder="radius..." value=""></textarea>
-                <div class="listAss">
-                    <form action="">
-                        <p><input id="check1" type="checkbox" name="categoria" value="check1"><label for="check1">Redes Eléctricas</label></p>
-                        <p><input id="check2" type="checkbox" name="categoria" value="check2"><label for="check2">Passeios</label></p>
-                        <p><input id="check3" type="checkbox" name="categoria" value="check3"><label for="check3">Pavimento</label></p>
-                        <p><input id="check4" type="checkbox" name="categoria" value="check4"><label for="check4">Abastecimento de Águas</label></p>
-                        <p><input id="check5" type="checkbox" name="categoria" value="check5"><label for="check5">Saneamento</label></p>
-                        <p><input id="check6" type="checkbox" name="categoria" value="check6"><label for="check6">Redes de Gás</label></p>
-                        <p><input id="check7" type="checkbox" name="categoria" value="check7"><label for="check7">Iluminação</label></p>
-                        <p><input id="check8" type="checkbox" name="categoria" value="check8"><label for="check8">Outros</label></p>
-                        <p><input id="check1" type="checkbox" name="categoria" value="check1"><label for="check9">Redes Eléctricas</label></p>
-                        <p><input id="check2" type="checkbox" name="categoria" value="check2"><label for="check10">Passeios</label></p>
-                        <p><input id="check3" type="checkbox" name="categoria" value="check3"><label for="check11">Pavimento</label></p>
-                        <p><input id="check4" type="checkbox" name="categoria" value="check4"><label for="check12">Abastecimento de Águas</label></p>
-                        <p><input id="check5" type="checkbox" name="categoria" value="check5"><label for="check13">Saneamento</label></p>
-                        <p><input id="check6" type="checkbox" name="categoria" value="check6"><label for="check14">Redes de Gás</label></p>
-                        <p><input id="check7" type="checkbox" name="categoria" value="check7"><label for="check15">Iluminação</label></p>
-                        <p><input id="check8" type="checkbox" name="categoria" value="check8"><label for="check16">Outros</label></p>
-                    </form>
-                </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 linha2 esquerda clickable outline" id="filtro">
+          <div class="corOp cor-perfil" id="inside_filtro">
+            <div id="titAss">
+              Filter by:
             </div>
+            <input type="text" class="text-filtro clickable outline" placeholder="tag...">
+            <input type="text" class="text-filtro text-filtro2 clickable outline" placeholder="radius...">
+            <div class="listAss">
+              <form action="">
+                <p><input id="check1" type="checkbox" name="categoria" value="check1"><label for="check1">Redes Eléctricas</label></p>
+                <p><input id="check2" type="checkbox" name="categoria" value="check2"><label for="check2">Passeios</label></p>
+                <p><input id="check3" type="checkbox" name="categoria" value="check3"><label for="check3">Pavimento</label></p>
+                <p><input id="check4" type="checkbox" name="categoria" value="check4"><label for="check4">Abastecimento de Águas</label></p>
+                <p><input id="check5" type="checkbox" name="categoria" value="check5"><label for="check5">Saneamento</label></p>
+                <p><input id="check6" type="checkbox" name="categoria" value="check6"><label for="check6">Redes de Gás</label></p>
+                <p><input id="check7" type="checkbox" name="categoria" value="check7"><label for="check7">Iluminação</label></p>
+                <p><input id="check8" type="checkbox" name="categoria" value="check8"><label for="check8">Outros</label></p>
+                <p><input id="check1" type="checkbox" name="categoria" value="check1"><label for="check9">Redes Eléctricas</label></p>
+                <p><input id="check2" type="checkbox" name="categoria" value="check2"><label for="check10">Passeios</label></p>
+                <p><input id="check3" type="checkbox" name="categoria" value="check3"><label for="check11">Pavimento</label></p>
+                <p><input id="check4" type="checkbox" name="categoria" value="check4"><label for="check12">Abastecimento de Águas</label></p>
+                <p><input id="check5" type="checkbox" name="categoria" value="check5"><label for="check13">Saneamento</label></p>
+                <p><input id="check6" type="checkbox" name="categoria" value="check6"><label for="check14">Redes de Gás</label></p>
+                <p><input id="check7" type="checkbox" name="categoria" value="check7"><label for="check15">Iluminação</label></p>
+                <p><input id="check8" type="checkbox" name="categoria" value="check8"><label for="check16">Outros</label></p>
+              </form>
+            </div>
+          </div>
         </div>
 
     </div>
