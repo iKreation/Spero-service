@@ -11,7 +11,8 @@ var app = {
 	follow:true,
 	f_notifi:false,
 	f_state:0,
-	r_notifi:false
+	r_notifi:false,
+	run_init:true,
 }
 
 app.events = function() {
@@ -510,39 +511,43 @@ app.events = function() {
 
 app.init = function() {
 	var self = this;
-	app.events();
-	setTimeout(function() {
-		$("#loading").fadeOut(100);
-		$("#container").fadeIn(300);
-		$('#filtro').jScrollPane();
+	if(self.run_init){
+		app.events();
+		setTimeout(function() {
+			$("#loading").fadeOut(100);
+			$("#container").fadeIn(300);
+			$('#filtro').jScrollPane();
+			$('.reports').jScrollPane();
+			$("#login-form").fadeIn(300);
+			$("#registration-form").fadeIn(300);
+		}, 2000);
+
+		$("#container-settings").fadeIn(300);
+
+		$("#choose_container").fadeIn(300);
+		$("#choose_container").css({'cursor': 'url(img/cursor.png) 15 15, pointer'});
+
+		$("#my_rep_container").fadeIn(300);
+
+		$("#container-other-report").fadeIn(300);
+		$("#container-own-report").fadeIn(300);
+		$('.comments').jScrollPane();
 		$('.reports').jScrollPane();
-		$("#login-form").fadeIn(300);
-		$("#registration-form").fadeIn(300);
-	}, 2000);
 
-	$("#container-settings").fadeIn(300);
+		$('#settings-name').css({
+			"background": "rgba(0,0,0,0.8)"
+		});
+		$("#inside-viewer-1").fadeIn(300);
 
-	$("#choose_container").fadeIn(300);
-	$("#choose_container").css({'cursor': 'url(img/cursor.png) 15 15, pointer'});
+		$('#my-reports-list').jScrollPane();
 
-	$("#my_rep_container").fadeIn(300);
+		$("#container-dss").fadeIn(300);
+		$('#my-reports-list-dss').jScrollPane();
+		$('#filtro-dss').jScrollPane();
+		$('#filtroFind-dss').jScrollPane();
 
-	$("#container-other-report").fadeIn(300);
-	$("#container-own-report").fadeIn(300);
-	$('.comments').jScrollPane();
-	$('.reports').jScrollPane();
-
-	$('#settings-name').css({
-		"background": "rgba(0,0,0,0.8)"
-	});
-	$("#inside-viewer-1").fadeIn(300);
-
-	$('#my-reports-list').jScrollPane();
-
-	$("#container-dss").fadeIn(300);
-	$('#my-reports-list-dss').jScrollPane();
-	$('#filtro-dss').jScrollPane();
-	$('#filtroFind-dss').jScrollPane();
+		self.run_init = false;
+	};
 }
 
 app.initMaps = function() {
