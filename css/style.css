@@ -273,10 +273,13 @@ a{
   max-width:1900px !important;
 }
 .container-cut{
-    max-width: 1500px !important;
+  max-width: 1500px !important;
 }
 .container-cut-2{
-    max-width: 1240px !important;
+  max-width: 1240px !important;
+}
+.container-cut-3{
+  max-width:1400px !important;
 }
 #choose_container{
 	pointer-events: visible !important;
@@ -982,9 +985,10 @@ a{
 /*------------REPORTS NOTIFICATIONS DROPDOWN */
 
 /*------------PAGE TITLE DROPDOWN */
+/*
 #pages-titles{
 	margin-left: 2.6%;
-}
+}*/
 #page-title-list{
 	padding: 0px !important;
 	overflow-y:auto;
@@ -1354,9 +1358,11 @@ a{
   .page-title-list{
   	font-size: 12px;
   }
+  /*
   #pages-titles{
   	margin-left: 6.5%;
   }
+  */
   .text-search{
     padding-top: 12px;
   }
@@ -1580,9 +1586,11 @@ a{
   #r-notifications-list{
     margin-left: 1% !important;
   }
+  /*
   #pages-titles{
     margin-left: 6.5%;
   }
+  */
   .text-search{
     padding-top: 10px;
   }
