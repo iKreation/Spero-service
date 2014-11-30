@@ -12,7 +12,7 @@ var app = {
 	f_notifi:false,
 	f_state:0,
 	r_notifi:false,
-	run_init:true,
+	run_init:true
 }
 
 app.events = function() {
@@ -25,6 +25,8 @@ app.events = function() {
 
 	//--------------------------------------------------------------MAP OPTIONS
 	//-------------------------HIDE/SHOW MAP reverse_controls
+	var document_width = $(document).width();
+
 	function showControls(){
 		app.map.setOptions({
 			draggable: true,
@@ -97,44 +99,48 @@ app.events = function() {
 		$("#vizi_container").fadeIn(500);
 		$("#vizibi2").fadeIn(300);
 		showControls();
-		//app.reverse_controls = true;
-		//app.reverse_controls2 = false;
+		$('#map').removeClass('unvisible');
+		$('#map').addClass('clickable');
 	});
 	$("#vizibi2").click(function() {
 		$("#vizi_container").fadeOut(300);
 		$("#container").fadeIn(500);
 		$("#vizibi").fadeIn(300);
 		hideControls();
-		//app.reverse_controls = false;
-		//app.reverse_controls2 = true;
+		$('#map').addClass('unvisible');
+		$('#map').removeClass('clickable');
 	});
 	$("#vizibi3").click(function() {
 		$("#container").fadeOut(300);
 		$("#vizi_container_other").fadeIn(500);
 		$("#vizibi4").fadeIn(300);
 		showControls();
+		$('#map').removeClass('unvisible');
+		$('#map').addClass('clickable');
 	});
 	$("#vizibi4").click(function() {
 		$("#vizi_container_other").fadeOut(300);
 		$("#container").fadeIn(500);
 		$("#vizibi3").fadeIn(300);
 		hideControls();
+		$('#map').addClass('unvisible');
+		$('#map').removeClass('clickable');
 	});
 	//--------------------------FIND REPORTS
 	$("#findRep").click(function() {
 		$("#container").fadeOut(300);
 		$("#find_container").fadeIn(500);
 		showControls();
-		//app.reverse_controls = true;
-		//app.reverse_controls2 = false;
+		$('#map').removeClass('unvisible');
+		$('#map').addClass('clickable');
 	});
 	//--------------------------FECHAR FIND REPORTS
 	$("#fecharFind").click(function() {
 		$("#container").fadeIn(500);
 		$("#find_container").fadeOut(300);
 		hideControls();
-		//app.reverse_controls = true;
-		//app.reverse_controls2 = false;
+		$('#map').addClass('unvisible');
+		$('#map').removeClass('clickable');
 	});
 	//--------------------------SOLVED/UNSOLVED REPORTS
 	$("#resolvidos").click(function() {
@@ -150,8 +156,6 @@ app.events = function() {
 	$("#fecharChange").click(function() {
 		$("#container").fadeIn(500);
 		$("#photo_container").fadeOut(300);
-		//app.reverse_controls = true;
-		//app.reverse_controls2 = false;
 	});
 
 	//--------------------------------------------------------------CREATE REPORT PAGE
@@ -219,6 +223,8 @@ app.events = function() {
 		$("#vizi_container_other").fadeIn(500);
 		$("#vizibi2Other").fadeIn(300);
 		showControls();
+		$('#map').removeClass('unvisible');
+		$('#map').addClass('clickable');
 	});
 	//-------------------------HIDE/SHOW FASE2
 	$("#vizibi2Other").click(function() {
@@ -226,6 +232,8 @@ app.events = function() {
 		$("#vizi_container_other").fadeOut(300);
 		$("#vizibi2Other").fadeOut(300);
 		hideControls();
+		$('#map').addClass('unvisible');
+		$('#map').removeClass('clickable');
 	});
 	//--------------------------IMAGES
 	$(".foto_report2").click(function() {
@@ -249,13 +257,16 @@ app.events = function() {
 		$("#vizi_container_own").fadeIn(500);
 		$("#vizibi2Own").fadeIn(300);
 		showControls();
+		$('#map').removeClass('unvisible');
+		$('#map').addClass('clickable');
 	});
 	//-------------------------HIDE/SHOW FASE2
 	$("#vizibi2Own").click(function() {
 		$("#container-own-report").fadeIn(500);
 		$("#vizi_container_own").fadeOut(300);
 		$("#vizibi2Own").fadeOut(300);
-		hideControls();
+		$('#map').addClass('unvisible');
+		$('#map').removeClass('clickable');
 	});
 	//--------------------------IMAGES
 	$(".foto_report2").click(function() {
@@ -571,7 +582,7 @@ app.initMaps = function() {
 
 		styles: [{"elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"color":"#f5f5f2"},{"visibility":"on"}]},{"featureType":"administrative","stylers":[{"visibility":"off"}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"poi.attraction","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"visibility":"on"}]},{"featureType":"poi.business","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","stylers":[{"visibility":"on"}]},{"featureType":"poi.place_of_worship","stylers":[{"visibility":"off"}]},{"featureType":"poi.school","stylers":[{"visibility":"off"}]},{"featureType":"poi.sports_complex","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#ffffff"},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"visibility":"simplified"},{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"labels.icon","stylers":[{"color":"#ffffff"},{"visibility":"on"}]},{"featureType":"road.highway","elementType":"labels.icon","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","stylers":[{"color":"#000000"}]},{"featureType":"poi.park","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"color":"#05E9FF"}]},{"featureType":"landscape","stylers":[{"color":"#e5e8e7"}]},{"featureType":"poi.park","stylers":[{"color":"#8ba129"}]},{"featureType":"road","stylers":[{"color":"#FAFAFA"}]},{"featureType":"poi.sports_complex","elementType":"geometry","stylers":[{"color":"#c7c7c7"},{"visibility":"off"}]},{"featureType":"water","stylers":[{"color":"#05E9FF"}]},{"featureType":"poi.park","stylers":[{"color":"#1abc9c"}]},{"featureType":"poi.park","stylers":[{"gamma":1.51}]},{"featureType":"road.local","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"poi.government","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"landscape","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"road.local","stylers":[{"visibility":"simplified"}]},{"featureType":"road"},{"featureType":"road"},{},{"featureType":"road.highway"},{"elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"color":"#8C8C8C"}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]}]
 
-    };
+  };
 
 	var mapElement = document.getElementById('map');
 	// Create the Google Map using out element and options defined above
@@ -584,4 +595,14 @@ app.initMaps = function() {
 
 $(document).ready(function() {
 	app.initMaps();
+
+	var ar=new Array(32,33,34,35,36,37,38,39,40);
+	$(document).keydown(function(e) {
+		var key = e.which;
+		if($.inArray(key,ar) > -1) {
+			e.preventDefault();
+			return false;
+		}
+		return true;
+	});
 })

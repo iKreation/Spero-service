@@ -45,6 +45,7 @@ div.gmnoprint { padding-top: 60px; }
 
 html{
 	height: 100%;
+  overflow: hidden;
 }
 
 body{
@@ -141,6 +142,9 @@ a{
 }
 .clickable{
 	pointer-events:visible !important;
+}
+.unvisible{
+  pointer-events:none !important;
 }
 .outline{
 	outline: none;
@@ -1136,6 +1140,14 @@ a{
 
 /* 768px */
 @media only screen and (max-width : 48.000em) {
+  #map{
+    overflow:hidden !important;
+  }
+  html, body{
+    position: fixed;
+    overflow:hidden !important;
+  }
+
 	.maisPeq{
 		width: 7% !important;
 	}
