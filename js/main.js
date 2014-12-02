@@ -268,6 +268,7 @@ app.events = function() {
 		$("#container-own-report").fadeIn(500);
 		$("#vizi_container_own").fadeOut(300);
 		$("#vizibi2Own").fadeOut(300);
+		hideControls();
 		$('#map').addClass('unvisible');
 		$('#map').removeClass('clickable');
 	});
@@ -534,32 +535,35 @@ app.init = function() {
 			$('.reports').jScrollPane();
 			$("#login-form").fadeIn(300);
 			$("#registration-form").fadeIn(300);
+
+			$("#my_rep_container").fadeIn(300);
+			$('.filter-height').jScrollPane();
+			$('#my-reports-list').jScrollPane();
+
+			$("#choose_container").fadeIn(300);
+			$("#choose_container").css({'cursor': 'url(img/cursor.png) 15 15, pointer'});
+
+			$("#container-settings").fadeIn(300);
+			$('#settings-name').css({
+				"background": "rgba(0,0,0,0.8)"
+			});
+			$("#inside-viewer-1").fadeIn(300);
+
+			$("#container-dss").fadeIn(300);
+			$('#my-reports-list-dss').jScrollPane();
+			$('#filtro-dss').jScrollPane();
+			$('#filtroFind-dss').jScrollPane();
+
+			$("#container-other-report").fadeIn(300);
+			$("#container-own-report").fadeIn(300);
+			$('.comments').jScrollPane();
+			$('.single-report').jScrollPane();
 		}, 2000);
 
-		$("#container-settings").fadeIn(300);
 
-		$("#choose_container").fadeIn(300);
-		$("#choose_container").css({'cursor': 'url(img/cursor.png) 15 15, pointer'});
 
-		$("#my_rep_container").fadeIn(300);
-		$('.filter-height').jScrollPane();
 
-		$("#container-other-report").fadeIn(300);
-		$("#container-own-report").fadeIn(300);
-		$('.comments').jScrollPane();
-		$('.reports').jScrollPane();
 
-		$('#settings-name').css({
-			"background": "rgba(0,0,0,0.8)"
-		});
-		$("#inside-viewer-1").fadeIn(300);
-
-		$('#my-reports-list').jScrollPane();
-
-		$("#container-dss").fadeIn(300);
-		$('#my-reports-list-dss').jScrollPane();
-		$('#filtro-dss').jScrollPane();
-		$('#filtroFind-dss').jScrollPane();
 
 		self.run_init = false;
 	};
