@@ -97,6 +97,7 @@ app.events = function() {
 	$("#vizibi").click(function() {
 		$("#container").fadeOut(300);
 		$("#vizi_container").fadeIn(500);
+		$('.filter-height').jScrollPane();
 		$("#vizibi2").fadeIn(300);
 		showControls();
 		$('#map').removeClass('unvisible');
@@ -130,6 +131,7 @@ app.events = function() {
 	$("#findRep").click(function() {
 		$("#container").fadeOut(300);
 		$("#find_container").fadeIn(500);
+		$('.filter-height').jScrollPane();
 		showControls();
 		$('#map').removeClass('unvisible');
 		$('#map').addClass('clickable');
@@ -221,6 +223,7 @@ app.events = function() {
 	$("#vizibiOther").click(function() {
 		$("#container-other-report").fadeOut(300);
 		$("#vizi_container_other").fadeIn(500);
+		$('.filter-height').jScrollPane();
 		$("#vizibi2Other").fadeIn(300);
 		showControls();
 		$('#map').removeClass('unvisible');
@@ -255,6 +258,7 @@ app.events = function() {
 	$("#vizibiOwn").click(function() {
 		$("#container-own-report").fadeOut(300);
 		$("#vizi_container_own").fadeIn(500);
+		$('.filter-height').jScrollPane();
 		$("#vizibi2Own").fadeIn(300);
 		showControls();
 		$('#map').removeClass('unvisible');
@@ -527,7 +531,7 @@ app.init = function() {
 		setTimeout(function() {
 			$("#loading").fadeOut(100);
 			$("#container").fadeIn(300);
-			$('#filtro').jScrollPane();
+			$('.filter-height').jScrollPane();
 			$('.reports').jScrollPane();
 			$("#login-form").fadeIn(300);
 			$("#registration-form").fadeIn(300);
@@ -539,6 +543,7 @@ app.init = function() {
 		$("#choose_container").css({'cursor': 'url(img/cursor.png) 15 15, pointer'});
 
 		$("#my_rep_container").fadeIn(300);
+		$('.filter-height').jScrollPane();
 
 		$("#container-other-report").fadeIn(300);
 		$("#container-own-report").fadeIn(300);
