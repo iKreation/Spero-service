@@ -1,0 +1,32 @@
+@font-face
+{
+  font-family: SitD;
+  src: url('SourceSansPro-It.otf');
+}
+@font-face
+{
+  font-family: Sreg;
+  src: url('SourceSansPro-Regular.ttf');
+}
+
+
+.infobox-wrapper {
+  display:none;
+}
+#infobox {
+  margin-top: 5px;
+  background:rgba(192, 57, 43, 0.9);
+  color:white;
+  font-family:Sreg;
+  font-size:14px;
+  padding:10px;
+}
+#infobox-text{
+  width:200px;
+}
+#more{
+  margin-top:20px;
+  font-size:12px;
+  font-family: SitD;
+  cursor: pointer;
+}
