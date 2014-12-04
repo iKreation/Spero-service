@@ -521,14 +521,17 @@ app.events = function() {
 	});
 	//---------------------DSS PAGE
 	$("#filter-show-dss :checkbox").click(function() {
-		$(".dss-show").fadeOut(10);
+		$(".dss-show").hide();
 		$(".dss-hide").fadeIn(700);
 		$("#filter-show-dss :checkbox:checked").each(function() {
-			$(".dss-hide").fadeOut(10);
+			$(".dss-hide").hide();
 			$("." + $(this).val()).fadeIn(700);
 			$('#my-reports-list-dss').jScrollPane();
 			$('#filtroFind-dss').jScrollPane();
 		});
+	});
+	$("#fecharDSS").click(function() {
+		window.location.href = "index.html";
 	});
 }
 
