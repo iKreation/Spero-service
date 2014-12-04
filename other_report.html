@@ -19,6 +19,8 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <!-- ScrollPane CSS -->
     <link href="css/jquery.jscrollpane.red.css" rel="stylesheet" type="text/css" media="all">
+    <!-- Tooltipster CSS -->
+    <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
 
     <!-- IE8 support for HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -73,12 +75,12 @@
     <div class="onTop" id="loading"></div>
 
     <!-- Free Navigation -->
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container tooltipsed" id="vizi_container_other" title="free search">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container" id="vizi_container_other">
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 space space-fixed space-hide"></div>
-        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq other_report buton clickable" id="vizibi2Other">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq other_report buton clickable tooltipsed" id="vizibi2Other" title="leave free search">
             <img id="imgVizi" src="img/vizi2.png" />
         </div>
-        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq other_report buton esquerda clickable" id="placeOther">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq other_report buton esquerda clickable tooltipsed" id="placeOther" title="add report">
             <img id="imgChoose" src="img/choose.png" />
         </div>
         <div class="col-lg-8 col-md-7 col-sm-7 col-xs-8 space"></div>
@@ -124,7 +126,7 @@
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 buton clickable esquerda alt-lg2 fotoAtual">
             <img class="imgFoto2" src="img/buraco.jpg" />
         </div>
-        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq other_report esquerda buton clickable" id="fecharOtherImg">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq other_report esquerda buton clickable tooltipsed" id="fecharOtherImg" title="close images viewer">
             <img id="imgFechar" src="img/fechar.png" />
         </div>
 
@@ -149,12 +151,12 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container container-cut-2" id="container-other-report">
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space">
         </div>
-        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq other_report buton clickable" id="vizibiOther">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq other_report buton clickable tooltipsed" id="vizibiOther" title="free search">
             <img id="imgVizi" src="img/vizi.png" />
         </div>
         <div class="col-lg-9 col-md-9 col-sm-8 col-xs-9 space">
         </div>
-        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq other_report esquerda buton clickable" id="fecharOther">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq other_report esquerda buton clickable tooltipsed" id="fecharOther" title="close report">
             <img id="imgFechar" src="img/fechar.png" />
         </div>
 
@@ -289,6 +291,9 @@
     <!-- ScrollPane JS -->
     <script src="js/jquery.jscrollpane.min.js" type="text/javascript"></script>
     <script src="js/jquery.mousewheel.js" type="text/javascript"></script>
+
+    <!-- Tooltipster JS -->
+    <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
 
 </body>
 
