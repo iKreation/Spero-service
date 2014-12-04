@@ -521,9 +521,11 @@ app.events = function() {
 	});
 	//---------------------DSS PAGE
 	$("#filter-show-dss :checkbox").click(function() {
-		$(".dss-show").hide();
+		$(".dss-show").fadeOut(10);
+		$(".dss-hide").fadeIn(700);
 		$("#filter-show-dss :checkbox:checked").each(function() {
-			$("." + $(this).val()).fadeIn(300);
+			$(".dss-hide").fadeOut(10);
+			$("." + $(this).val()).fadeIn(700);
 			$('#my-reports-list-dss').jScrollPane();
 			$('#filtroFind-dss').jScrollPane();
 		});
