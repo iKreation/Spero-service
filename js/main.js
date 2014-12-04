@@ -568,7 +568,6 @@ app.init = function() {
 			touchDevices: false,
 			trigger: 'hover'
 		});
-
 		self.run_init = false;
 	};
 }
@@ -617,5 +616,14 @@ $(document).ready(function() {
 			return false;
 		}
 		return true;
+	});
+
+	$('.tooltips-menu').tooltipster({
+		animation: 'fade',
+		delay: 10,
+		theme: 'tooltipster-default',
+		position: 'bottom',
+		touchDevices: false,
+		trigger: 'hover'
 	});
 })
