@@ -1696,8 +1696,8 @@ a{
 }
 
 /*  VERTICAL RESPONSIVE-----------*/
-/*400px*/
-@media only screen and (max-height: 25.000em) {
+/*500px*/
+@media only screen and (max-height: 31.250em) {
   #map{
     overflow:hidden !important;
   }
