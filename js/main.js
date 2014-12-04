@@ -87,9 +87,6 @@ app.events = function() {
 	$("#fecharMy").click(function() {
 		window.location.href = "index.html";
 	});
-	$(".my-reports-list").click(function() {
-		window.location.href = "own_report.html";
-	});
 
 	//--------------------------------------------------------------FIND REPORTS PAGE
 	//-------------------------HIDE/SHOW FASE1
@@ -546,14 +543,14 @@ app.init = function() {
 			$("#choose_container").fadeIn(300);
 			$("#choose_container").css({'cursor': 'url(img/cursor.png) 15 15, pointer'});
 
+			$("#my_rep_container").fadeIn(300);
+			$('.filter-height').jScrollPane();
+			$('#my-reports-list').jScrollPane();
+
 			$("#container-dss").fadeIn(300);
 			$('#my-reports-list-dss').jScrollPane();
 			$('#filtro-dss').jScrollPane();
 			$('#filtroFind-dss').jScrollPane();
-
-			$("#my_rep_container").fadeIn(300);
-			$('.filter-height').jScrollPane();
-			$('#my-reports-list').jScrollPane();
 
 			$("#container-other-report").fadeIn(300);
 			$("#container-own-report").fadeIn(300);
@@ -601,7 +598,6 @@ app.initMaps = function() {
 
 	google.maps.event.addListener(this.map, 'tilesloaded', function(evt) {
 		self.init();
-		self.controls();
 	});
 }
 
