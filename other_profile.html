@@ -19,6 +19,8 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <!-- ScrollPane CSS -->
     <link href="css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" media="all">
+    <!-- Tooltipster CSS -->
+    <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
 
     <!-- IE8 support for HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -73,9 +75,9 @@
     <div class="onTop" id="loading"></div>
 
     <!-- Vizibi btn other people -->
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container" id="vizi_container_other">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onTop container" id="vizi_container_other" >
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space space-hide"></div>
-        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq cor-perfil corOp buton clickable" id="vizibi4">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq cor-perfil corOp buton clickable tooltipsed" id="vizibi4" title="leave free search">
             <img id="imgVizi" src="img/vizi2.png" />
         </div>
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2 space"></div>
@@ -104,7 +106,7 @@
 
       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 maisPeq1-2" id="space-index"></div>
 
-        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq cor-perfil corOp buton clickable" id="vizibi3">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 alt-menu maisPeq cor-perfil corOp buton clickable tooltipsed" id="vizibi3" title="free search">
             <img id="imgVizi" src="img/vizi.png" />
         </div>
 
@@ -208,13 +210,19 @@
             </div>
         </div>
 
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 linha2 esquerda clickable outline clickable filter-height" id="filtro">
-          <div class="cor-perfil corOp inside-filter">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 linha2 esquerda clickable outline filter-height" id="filtro">
+          <div class="corOp cor-perfil inside-filter">
             <div id="titAss">
               Filter by:
             </div>
             <input type="text" class="text-filtro clickable outline" placeholder="tag...">
             <input type="text" class="text-filtro text-filtro2 clickable outline" placeholder="radius...">
+            <div class="listRep">
+              <form action="">
+                <p><input id="check23" type="checkbox" name="categoria" value="check1"><label for="check23">Own Reports</label></p>
+                <p><input id="check24" type="checkbox" name="categoria" value="check1"><label for="check24">Other's Reports</label></p>
+              </form>
+            </div>
             <div class="listAss">
               <form action="">
                 <p><input id="check1" type="checkbox" name="categoria" value="check1"><label for="check1">Redes Eléctricas</label></p>
@@ -249,6 +257,9 @@
     <!-- ScrollPane JS -->
     <script src="js/jquery.jscrollpane.min.js" type="text/javascript"></script>
     <script src="js/jquery.mousewheel.js" type="text/javascript"></script>
+
+    <!-- Tooltipster JS -->
+    <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
 
 </body>
 
