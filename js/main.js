@@ -519,6 +519,15 @@ app.events = function() {
 	$("#followers-title").click(function() {
 		window.location.href = "followers.html";
 	});
+	//---------------------DSS PAGE
+	$("#filter-show-dss :checkbox").click(function() {
+		$(".dss-show").hide();
+		$("#filter-show-dss :checkbox:checked").each(function() {
+			$("." + $(this).val()).fadeIn(300);
+			$('#my-reports-list-dss').jScrollPane();
+			$('#filtroFind-dss').jScrollPane();
+		});
+	});
 }
 
 app.init = function() {

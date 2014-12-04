@@ -43,6 +43,10 @@
 /*MAP CONTROLS*/
 div.gmnoprint { padding-top: 60px; }
 
+ul {
+  list-style: none;
+}
+
 html{
 	height: 100%;
   overflow: hidden;
@@ -1047,6 +1051,12 @@ a{
 }
 #sliders{
 	margin-top: -25px;
+}
+.dss-show{
+  display:none;
+}
+.listAss-dss{
+  margin-left:-30px !important;
 }
 /*------------DSS PAGE */
 
