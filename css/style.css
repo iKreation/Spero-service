@@ -1726,6 +1726,21 @@ a{
 	}
 }
 
+/* TABLET AND DOWN -----------*/
+/*1025px*/
+@media only screen and (max-height: 64.063em) {
+  #map{
+    overflow:hidden !important;
+  }
+  html, body{
+    position: fixed !important;
+    overflow:hidden !important;
+  }
+  div.gmnoprint {
+    display:none !important;
+  }
+}
+
 /*  VERTICAL RESPONSIVE-----------*/
 /*500px*/
 @media only screen and (max-height: 31.250em) {

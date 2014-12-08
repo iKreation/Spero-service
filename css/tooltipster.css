@@ -39,19 +39,19 @@
 /*500px*/
 @media only screen and (max-height: 31.250em) {
 	.tooltipster-default {
-		display:none;
+		display:none !important;
+	}
+	.tooltipster-base {
+		display:none !important;
 	}
 }
-/* 768px / 992px */
-@media only screen and (min-width : 48.000em) and (max-width : 62.000em) {
+/* 1025px */
+@media only screen and (max-width : 64.063em) {
 	.tooltipster-default {
-		display:none;
+		display:none !important;
 	}
-}
-/* 768px */
-@media only screen and (max-width : 48.000em) {
-	.tooltipster-default {
-		display:none;
+	.tooltipster-base {
+		display:none !important;
 	}
 }
 

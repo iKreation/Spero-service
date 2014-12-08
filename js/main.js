@@ -572,13 +572,17 @@ app.init = function() {
 			$('.single-report').jScrollPane();
 		}, 2000);
 
-		$('.tooltipsed').tooltipster({
-			animation: 'fade',
-			delay: 10,
-			theme: 'tooltipster-default',
-			touchDevices: false,
-			trigger: 'hover'
-		});
+		var windowWidth = $( window ).width();
+		var windowHeight = $( window ).height();
+		if ( windowWidth > 1100 || windowWidth < 500 ){
+			$('.tooltipsed').tooltipster({
+				animation: 'fade',
+				delay: 10,
+				theme: 'tooltipster-default',
+				touchDevices: false,
+				trigger: 'hover'
+			});
+		}
 		self.run_init = false;
 	};
 }
@@ -618,12 +622,16 @@ app.initMaps = function() {
 $(document).ready(function() {
 	app.initMaps();
 
-	$('.tooltips-menu').tooltipster({
-		animation: 'fade',
-		delay: 10,
-		theme: 'tooltipster-default',
-		position: 'bottom',
-		touchDevices: false,
-		trigger: 'hover'
-	});
+	var windowWidth = $( window ).width();
+	var windowHeight = $( window ).height();
+	if ( windowWidth > 1100 || windowWidth < 500 ){
+		$('.tooltips-menu').tooltipster({
+			animation: 'fade',
+			delay: 10,
+			theme: 'tooltipster-default',
+			position: 'bottom',
+			touchDevices: false,
+			trigger: 'hover'
+		});
+	}
 })
