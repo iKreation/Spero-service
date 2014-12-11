@@ -1727,8 +1727,8 @@ a{
 }
 
 /* TABLET AND DOWN -----------*/
-/*1025px*/
-@media only screen and (max-width: 64.063em) {
+/*1024px*/
+@media only screen and (max-width: 64.000em) {
   #map{
     overflow:hidden !important;
   }
@@ -1743,6 +1743,7 @@ a{
 
 /*  VERTICAL RESPONSIVE-----------*/
 /*500px*/
+
 @media only screen and (max-height: 31.250em) {
   #map{
     overflow:hidden !important;

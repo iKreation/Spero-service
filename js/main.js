@@ -46,6 +46,12 @@ app.events = function() {
 			styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#a2daf2"}]},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#EEEEEE"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#DADFE1"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#DADFE1"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#DADFE1"}]},{"featureType":"poi.business","stylers":[{"visibility":"on"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#FFFFFF"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#FFFFFF"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#FFFFFF"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#DADFE1"}]},{"elementType":"labels.text","stylers":[{"visibility":"off"}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]}]
 		});
 	};
+	function hideControlsMobile(){
+		app.map.setOptions({
+			zoomControl: false,
+			panControl: false
+		});
+	};
 
 	//--------------------------------------------------------------SOCIAL BUTTON
 	//-------------------------FOLLOWING BUTTON CHANGE
@@ -98,6 +104,9 @@ app.events = function() {
 		showControls();
 		$('#map').removeClass('unvisible');
 		$('#map').addClass('clickable');
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			hideControlsMobile();
+		}
 	});
 	$("#vizibi2").click(function() {
 		$("#vizi_container").fadeOut(300);
@@ -114,6 +123,9 @@ app.events = function() {
 		showControls();
 		$('#map').removeClass('unvisible');
 		$('#map').addClass('clickable');
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			hideControlsMobile();
+		}
 	});
 	$("#vizibi4").click(function() {
 		$("#vizi_container_other").fadeOut(300);
@@ -131,6 +143,9 @@ app.events = function() {
 		showControls();
 		$('#map').removeClass('unvisible');
 		$('#map').addClass('clickable');
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			hideControlsMobile();
+		}
 	});
 	//--------------------------FECHAR FIND REPORTS
 	$("#fecharFind").click(function() {
@@ -224,6 +239,9 @@ app.events = function() {
 		showControls();
 		$('#map').removeClass('unvisible');
 		$('#map').addClass('clickable');
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			hideControlsMobile();
+		}
 	});
 	//-------------------------HIDE/SHOW FASE2
 	$("#vizibi2Other").click(function() {
@@ -259,6 +277,9 @@ app.events = function() {
 		showControls();
 		$('#map').removeClass('unvisible');
 		$('#map').addClass('clickable');
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			hideControlsMobile();
+		}
 	});
 	//-------------------------HIDE/SHOW FASE2
 	$("#vizibi2Own").click(function() {
@@ -572,17 +593,19 @@ app.init = function() {
 			$('.single-report').jScrollPane();
 		}, 2000);
 
-		var windowWidth = $( window ).width();
-		var windowHeight = $( window ).height();
-		if ( windowWidth > 1100 || windowWidth < 500 ){
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			$('.tooltipster-default').css("cssText", "display: none !important;");
+		} else{
 			$('.tooltipsed').tooltipster({
 				animation: 'fade',
 				delay: 10,
 				theme: 'tooltipster-default',
+				position: 'top',
 				touchDevices: false,
 				trigger: 'hover'
 			});
 		}
+
 		self.run_init = false;
 	};
 }
@@ -621,10 +644,9 @@ app.initMaps = function() {
 
 $(document).ready(function() {
 	app.initMaps();
-
-	var windowWidth = $( window ).width();
-	var windowHeight = $( window ).height();
-	if ( windowWidth > 1100 || windowWidth < 500 ){
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		$('.tooltipster-default').css("cssText", "display: none !important;");
+	} else{
 		$('.tooltips-menu').tooltipster({
 			animation: 'fade',
 			delay: 10,
