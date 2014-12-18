@@ -8,6 +8,24 @@
   font-family: Sreg;
   src: url('SourceSansPro-Regular.ttf');
 }
+@font-face
+{
+  font-family: Sbold;
+  src: url('SourceSansPro-Bold.ttf');
+}
+
+body{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+b{
+  text-decoration: none;
+  font-weight:normal;
+  font-family: Sbold;
+}
 
 
 .infobox-wrapper {
@@ -18,15 +36,27 @@
   background:rgba(192, 57, 43, 0.9);
   color:white;
   font-family:Sreg;
-  font-size:14px;
   padding:10px;
 }
 #infobox-text{
   width:200px;
+  font-size: 14px;
 }
 #more{
   margin-top:20px;
   font-size:12px;
   font-family: SitD;
   cursor: pointer;
+}
+
+.autor-data{
+  font-size: 12px;
+  margin-top: 8px;
+  font-family:Sreg;
+}
+.titulo_report{
+  font-size: 16px;
+  margin-top: 8px;
+  font-family:Sbold;
+  margin-bottom:8px;
 }
